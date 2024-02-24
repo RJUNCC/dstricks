@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: dstricks
+Version: 0.0.1
+Summary: Data science package
+Author: RJUNCC (Ryan Jacobs)
+Author-email: ryan.jacobs04@outlook.com
+Keywords: python,data science,ds,functions
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows

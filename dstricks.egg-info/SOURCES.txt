@@ -1,0 +1,8 @@
+README.md
+setup.py
+dstricks/__init__.py
+dstricks/hello.py
+dstricks.egg-info/PKG-INFO
+dstricks.egg-info/SOURCES.txt
+dstricks.egg-info/dependency_links.txt
+dstricks.egg-info/top_level.txt
