@@ -3,7 +3,7 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
     
-def cat_plot(data: pd.DataFrame, target: str, cat_cols: list, figsize: tuple=(8, 4), stacked: bool=True, show_legend: bool=True):
+def stacked_cat_plot(data: pd.DataFrame, target: str, cat_cols: list, figsize: tuple=(8, 4), stacked: bool=True, show_legend: bool=True):
     """
     data: dataframe
     target: target column on y axis
@@ -14,9 +14,20 @@ def cat_plot(data: pd.DataFrame, target: str, cat_cols: list, figsize: tuple=(8,
     for i in cat_cols:
         if i!=target:
             plot_data = (pd.crosstab(data[i],data[target],normalize='index')*100)
-            plot_data.plot(kind='bar',figsize=figsize, stacked=stacked, legend=show_legend)
+            ax = plot_data.plot(kind='bar',figsize=figsize, stacked=stacked, legend=show_legend)
             plt.ylabel(target)
+
+            if show_legend:
+                ax.legend(loc='upper left', bbox_to_anchor=(1.02, 1.0))  # Place legend to the right of the plot
+        
             plt.show()
+
+def cat_plot(data: pd.DataFrame, cat_cols):
+    for col in cat_cols:
+        sns.countplot(data=data, x=col)
+        plt.xticks(rotation=90)
+        plt.grid()
+        plt.show()
 
 def dist_box_plot(data: pd.DataFrame, num_cols: list, figsize: tuple=(12, 3)):
     for i in num_cols:
@@ -73,7 +84,7 @@ def labeled_barplot(data, feature, perc=False, n=None):
 
     plt.show()
 
-def biBox(data, y, num_cols = x=None):
+def biBox(data: pd.DataFrame, y: str, num_cols: list, x: str=None):
     temp1 = 0
     temp2 = 0
     fig, ax = plt.subplots(2, 4, figsize=(17, 10))
