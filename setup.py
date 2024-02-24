@@ -5,7 +5,7 @@ import os
 with open("README.md", "r") as f:
     long_description = f.read()
 
-VERSION = '0.0.1'
+VERSION = '0.0.3'
 DESCRIPTION = 'Data science package'
 
 # Setting up

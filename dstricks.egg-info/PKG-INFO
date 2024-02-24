@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: dstricks
-Version: 0.0.1
+Version: 0.0.3
 Summary: Data science package
 Author: RJUNCC (Ryan Jacobs)
 Author-email: ryan.jacobs04@outlook.com
@@ -26,6 +26,10 @@ Requires-Dist: pytest>=7.0; extra == "dev"
 Requires-Dist: twine>=5.0.0; extra == "dev"
 
 # dstricks
+
+[Github Link](https://github.com/RJUNCC/dstricks/tree/main?tab=readme-ov-file)
+
+[Pypi Link](https://pypi.org/project/dstricks/)
 
 A package full of data science functions I learned along the way.
 These should include modeling, visualization, statistics, etc.
