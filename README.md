@@ -2,6 +2,8 @@
 
 [Github Link](https://github.com/RJUNCC/dstricks/tree/main?tab=readme-ov-file)
 
+[Pypi Link](https://pypi.org/project/dstricks/)
+
 A package full of data science functions I learned along the way.
 These should include modeling, visualization, statistics, etc.
 This is used to make workflow faster and have already available functions.
