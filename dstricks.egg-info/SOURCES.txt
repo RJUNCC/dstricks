@@ -2,6 +2,8 @@ LICENSE
 README.md
 setup.py
 dstricks/__init__.py
+dstricks/model_metrics.py
+dstricks/plot.py
 dstricks.egg-info/PKG-INFO
 dstricks.egg-info/SOURCES.txt
 dstricks.egg-info/dependency_links.txt

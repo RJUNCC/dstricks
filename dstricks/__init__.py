@@ -1,1 +1,2 @@
-from .src.plot import (cat_plot, dist_box_plot)
+from dstricks.plot import *
+from dstricks.model_metrics import *
