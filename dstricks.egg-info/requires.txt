@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+seaborn
+matplotlib
+scipy
+statsmodels
+
+[dev]
+pytest>=7.0
+twine>=5.0.0

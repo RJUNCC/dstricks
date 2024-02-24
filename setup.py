@@ -18,8 +18,6 @@ setup(
     packages=find_packages(),
     long_description=long_description,
     long_description_content_type="text/markdown",
-    install_requires=[],
-    keywords=['python', 'data science', 'ds', 'functions'],
     classifiers=[ 
         "Development Status :: 1 - Planning",
         "Intended Audience :: Developers",
@@ -27,5 +25,11 @@ setup(
         "Operating System :: Unix",
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: Microsoft :: Windows",
-        ]
+        ],
+    install_requires=["pandas", "numpy", "scikit-learn", "seaborn", "matplotlib", "scipy", "statsmodels"],
+    keywords=['python', 'data science', 'ds', 'functions'],
+    extras_require={
+        'dev':['pytest>=7.0', "twine>=5.0.0"]
+    },
+    python_requires='>=3.10'
 )
