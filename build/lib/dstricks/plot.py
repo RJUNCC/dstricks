@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import numpy as np
+from sklearn.metrics import confusion_matrix, classification_report, precision_recall_curve,recall_score
     
 def stacked_cat_plot(data: pd.DataFrame, target: str, cat_cols: list, figsize: tuple=(8, 4), stacked: bool=True, show_legend: bool=True):
     """
@@ -22,7 +23,7 @@ def stacked_cat_plot(data: pd.DataFrame, target: str, cat_cols: list, figsize: t
         
             plt.show()
 
-def cat_plot(data: pd.DataFrame, cat_cols):
+def cat_plot(data: pd.DataFrame, cat_cols: list):
     for col in cat_cols:
         sns.countplot(data=data, x=col)
         plt.xticks(rotation=90)
@@ -95,4 +96,15 @@ def biBox(data: pd.DataFrame, y: str, num_cols: list, x: str=None):
             temp1 = temp1 + 1
         else:
             continue
+    plt.show()
+
+def metrics_score(actual: str, predicted: str, xticklabels: list|str, yticklabels: list|str):
+    print(classification_report(actual, predicted))
+
+    cm = confusion_matrix(actual, predicted)
+    plt.figure(figsize=(8,5))
+    
+    sns.heatmap(cm, annot=True,  fmt='.2f', xticklabels=xticklabels, yticklabels=yticklabels)
+    plt.ylabel('Actual')
+    plt.xlabel('Predicted')
     plt.show()

@@ -2,6 +2,7 @@ LICENSE
 README.md
 setup.py
 dstricks/__init__.py
+dstricks/cfg.py
 dstricks/model_metrics.py
 dstricks/plot.py
 dstricks.egg-info/PKG-INFO
