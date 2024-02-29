@@ -46,3 +46,24 @@ def model_performance_regression(model, predictors, target):
     )
 
     return df_perf
+
+def outlierChecker(data: pd.DataFrame, column: str):
+    iqr = data[column].quantile(0.75) - data[column].quantile(0.25)
+    upper_outliers = data[data[column] > data[column].quantile(0.75) + 1.5 * iqr]
+    lower_outliers = data[data[column] < data[column].quantile(0.25) - 1.5 * iqr]
+    return upper_outliers, lower_outliers
+
+def outlierSummary(data: pd.DataFrame, column: str):
+    upper, lower = outlierChecker(data, column)
+    print(f"Column: {column}")
+    print(f"Upper Outliers: {len(upper)}")
+    print(f"Lower Outliers: {len(lower)}")
+    print(f"Normalized Upper Outliers: {len(upper)/data.shape[0]}")
+    print(f"Normalized Lower Outliers: {len(lower)/data.shape[0]}")
+    print("-----------------------------------")
+
+def outlierRemoval(data: pd.DataFrame, column: str):
+    upper, lower = outlierChecker(data, column)
+    data = data.drop(index=list(upper.index))
+    data = data.drop(index=list(lower.index))
+    return data

@@ -85,10 +85,10 @@ def labeled_barplot(data, feature, perc=False, n=None):
 
     plt.show()
 
-def biBox(data: pd.DataFrame, y: str, num_cols: list, x: str=None):
+def biBox(data: pd.DataFrame, y: str, num_cols: list, x: str=None, figsize: tuple=(17, 10)):
     temp1 = 0
     temp2 = 0
-    fig, ax = plt.subplots(2, 4, figsize=(17, 10))
+    fig, ax = plt.subplots(2, 4, figsize=figsize)
     for col in num_cols:
         if col != y:
             sns.boxplot(data=data, x=col, y=y, ax=ax[temp2, temp1])
@@ -98,13 +98,24 @@ def biBox(data: pd.DataFrame, y: str, num_cols: list, x: str=None):
             continue
     plt.show()
 
-def metrics_score(actual: str, predicted: str, xticklabels: list|str, yticklabels: list|str):
+def metrics_score(actual, predicted, xticklabels: list|str, yticklabels: list|str):
     print(classification_report(actual, predicted))
 
     cm = confusion_matrix(actual, predicted)
     plt.figure(figsize=(8,5))
     
     sns.heatmap(cm, annot=True,  fmt='.2f', xticklabels=xticklabels, yticklabels=yticklabels)
+    plt.ylabel('Actual')
+    plt.xlabel('Predicted')
+    plt.show()
+
+def metrics_score(actual, predicted):
+    print(classification_report(actual, predicted))
+
+    cm = confusion_matrix(actual, predicted)
+    plt.figure(figsize=(8,5))
+    
+    sns.heatmap(cm, annot=True,  fmt='.2f')
     plt.ylabel('Actual')
     plt.xlabel('Predicted')
     plt.show()

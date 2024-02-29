@@ -49,7 +49,7 @@ class CFG:
     def train_path(self):
         return self.TRAIN_PATH
     
-    @path.setter
+    @train_path.setter
     def train_path(self, value):
         self.TRAIN_PATH = value
     
@@ -57,6 +57,6 @@ class CFG:
     def test_path(self):
         return self.TEST_PATH
     
-    @path.setter
+    @test_path.setter
     def test_path(self, value):
         self.TEST_PATH = value
